@@ -1,0 +1,364 @@
+/* ----------------------- VARIABILI & RESET ----------------------- */
+:root {
+    --bg-matrix: #111;
+    --matrix-color: rgba(30, 255, 30, 0.1);
+    --sidebar-bg: #e0f2f1;
+    --text-primary: #333;
+    --text-secondary: #666;
+    --accent: #26a69a;
+    --card-bg: rgba(255, 255, 255, 0.95);
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-primary);
+    background-color: var(--bg-matrix);
+    overflow: hidden;
+}
+
+/* ----------------------- BACKGROUND MATRIX ----------------------- */
+#matrix-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #111;
+}
+
+/* ----------------------- LAYOUT WRAPPER ----------------------- */
+.wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+/* ----------------------- SIDEBAR ----------------------- */
+.sidebar {
+    width: 280px;
+    background-color: var(--sidebar-bg);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.avatar-frame {
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    border: 5px solid white;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.avatar-frame img { width: 100%; height: auto; }
+
+.info { text-align: center; }
+.info h1 { font-size: 1.4rem; margin: 0; }
+.info p { font-size: 0.9rem; color: var(--text-secondary); margin: 5px 0 30px; }
+
+.nav ul { list-style: none; padding: 0; margin: 0; }
+.nav li a {
+    display: block;
+    padding: 15px 0;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.nav li a:hover { color: var(--accent); }
+
+/* ----------------------- MAIN CONTENT ----------------------- */
+.content {
+    flex: 1;
+    padding: 60px;
+    overflow-y: auto;
+    background: rgba(13, 17, 23, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+h2 {
+    color: #A2D2FF;
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+}
+
+section { margin-bottom: 50px; }
+
+/* ----------------------- SEZIONE STUDI ----------------------- */
+.card-horizontal {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.card {
+    flex: 0 0 300px;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    color: #1a1a1a;
+}
+
+/* ----------------------- SEZIONE PROGETTI ----------------------- */
+
+.projects-grid {
+    display: grid;
+    /* Crea colonne che si adattano da sole alla larghezza della pagina */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 10px 0;
+}
+
+.project-card {
+    background: var(--card-bg); /* Sfrutta il bianco semi-trasparente */
+    border-radius: 15px;
+    overflow: hidden; /* Fondamentale per smussare gli angoli dell'immagine */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+/* Gestione Immagini Progetto */
+.project-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ritaglia l'immagine senza schiacciarla */
+    border-bottom: 3px solid var(--accent);
+    display: block;
+}
+
+/* Testi della Card */
+.project-info {
+    padding: 20px;
+    flex-grow: 1; /* Fa sì che tutte le card abbiano la stessa altezza */
+    display: flex;
+    flex-direction: column;
+}
+
+.project-info h3 {
+    margin: 0 0 10px 0;
+    color: var(--text-primary);
+    font-size: 1.3rem;
+}
+
+.project-info p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Badge dei Linguaggi/Tecnologie */
+.project-tags {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.project-tags span {
+    background: #e0f7f5; /* Un verde acqua molto leggero */
+    color: var(--accent);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid rgba(38, 166, 154, 0.2);
+}
+
+/* Pulsante GitHub */
+.project-links {
+    margin-top: auto; /* Spinge il bottone sempre in fondo alla card */
+}
+
+.btn-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #24292e; /* Grigio scuro ufficiale GitHub */
+    color: #ffffff !important;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-github:hover {
+    background-color: #000000;
+    transform: scale(1.02);
+}
+
+.btn-github i {
+    font-size: 1.2rem;
+}
+
+/* Media Query per Mobile */
+@media (max-width: 480px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ----------------------- SEZIONE COMPETENZE ----------------------- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 30px;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px);
+}
+
+.skill-item i {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.skill-item span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.devicon-apple-original { color: #000; }
+
+.custom-c {
+    color: #A2D2FF !important;
+}
+    /* ----------------------- SEZIONE CONTATTI ----------------------- */
+
+    .contact-container {
+        background: rgba(20, 25, 35, 0.85); /* Sfondo scuro per far leggere il bianco */
+        backdrop-filter: blur(10px);        /* Effetto vetro sfocato sul Matrix */
+        padding: 40px;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .contact-cards {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .contact-item {
+        text-decoration: none;
+        color: #ffffff; /* Testo Email/GitHub in bianco */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: all 0.3s ease;
+    }
+
+    .contact-item i {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .contact-item:hover {
+        color: var(--accent); /* Diventa celeste al passaggio del mouse */
+        transform: translateY(-5px);
+    }
+
+    /* --- Area Download CV --- */
+    .cv-download-section {
+        border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linea di divisione sottile */
+        padding-top: 30px;
+    }
+
+    .cv-download-section p {
+        color: #ffffff !important; /* Forza il bianco per la leggibilità */
+        margin-bottom: 25px;
+        font-weight: 400;
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+    }
+
+    /* --- Bottone Scarica CV --- */
+    .btn-download {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background-color: var(--accent);
+        color: #ffffff;
+        padding: 15px 35px;
+        border-radius: 50px; /* Più arrotondato per un look moderno */
+        text-decoration: none;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(38, 166, 154, 0.3);
+    }
+
+    .btn-download:hover {
+        background-color: #1f8a7f;
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(38, 166, 154, 0.5);
+    }
+
+    .btn-download i {
+        font-size: 1.3rem;
+    }
+
+    .contact-item, .contact-item:visited {
+        color: white !important;
+        text-decoration: none !important;
+    }
+
+    #contatti p {
+        color: white !important;
+    }
+
+    .contact-item i {
+        font-size: 3rem !important; /* Rende le icone dei contatti grandi e visibili */
+        margin-bottom: 10px;
+        display: block;
+    }
+
+
+    .contact-item span {
+        color: white !important;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+    }

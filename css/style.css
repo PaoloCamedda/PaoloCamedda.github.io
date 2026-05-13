@@ -276,8 +276,13 @@ section { margin-bottom: 50px; }
     .contact-cards {
         display: flex;
         justify-content: center;
-        gap: 40px;
+        gap: 30px; /* Ridotto leggermente il gap per far stare tre icone comode */
         margin-bottom: 40px;
+        flex-wrap: wrap; /* Fondamentale per farle andare a capo su schermi piccoli */
+    }
+
+    .devicon-linkedin-plain {
+        color: #0077b5; /* Il blu ufficiale di LinkedIn */
     }
 
     .contact-item {
@@ -290,13 +295,17 @@ section { margin-bottom: 50px; }
     }
 
     .contact-item i {
-        font-size: 2.5rem;
-        margin-bottom: 10px;
+        color: white;
+        transition: color 0.3s ease;
     }
 
     .contact-item:hover {
         color: var(--accent); /* Diventa celeste al passaggio del mouse */
         transform: translateY(-5px);
+    }
+
+    .contact-item:hover .devicon-linkedin-plain {
+        color: #00a0dc;
     }
 
     /* --- Area Download CV --- */

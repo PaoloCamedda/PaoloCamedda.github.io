@@ -371,3 +371,75 @@ section { margin-bottom: 50px; }
         text-transform: uppercase;
         font-size: 0.9rem;
     }
+
+
+    /* ==========================================================================
+   MEDIA QUERIES PER DISPOSITIVI MOBILI (Smartphone e Tablet piccoli)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* Il wrapper non affianca più gli elementi ma li mette in colonna */
+    .wrapper {
+        display: block;
+    }
+
+    /* Gestione della Sidebar come menu a comparsa laterale */
+    .sidebar {
+        position: fixed;
+        left: -100%; /* Spostata fuori dallo schermo */
+        top: 0;
+        width: 270px;
+        height: 100%;
+        z-index: 999;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
+        overflow-y: auto;
+    }
+
+    /* Classe attivata via JS al clic sull'hamburger */
+    .sidebar.active {
+        left: 0;
+    }
+
+    /* Spazio per evitare che il contenuto finisca sotto il pulsante hamburger */
+    .content {
+        padding: 60px 20px 20px 20px; 
+        margin-left: 0 !important; /* Resetta eventuali margini fissi di sinistra */
+    }
+
+    /* Stile per il pulsante Hamburger */
+    .hamburger {
+        display: block;
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        z-index: 1000;
+        background: rgba(0, 0, 0, 0.75);
+        border: 1px solid #00f0ff; /* Colore cyan/neon in linea con lo stile */
+        color: #00f0ff;
+        padding: 8px 12px;
+        font-size: 24px;
+        border-radius: 4px;
+        cursor: pointer;
+        backdrop-filter: blur(5px);
+    }
+
+    /* Griglie reattive: una sola colonna sui telefoni */
+    .projects-grid, .skills-grid, .card-horizontal {
+        grid-template-columns: 1fr !important;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .project-card {
+        flex-direction: column; /* L'immagine del progetto va sopra il testo */
+    }
+}
+
+/* Nasconde il pulsante hamburger sui monitor desktop */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
+}

@@ -1,0 +1,63 @@
+{
+  "studi": [
+    {
+      "istituto": "Università del Piemonte Orientale",
+      "titolo": "LAUREA IN INFORMATICA (2022-2025)"
+    },
+    {
+      "istituto": "ITIS Othoca",
+      "titolo": "DIPLOMA IN INFORMATICA (2012-2017)"
+    }
+  ],
+  "progetti": [
+    {
+      "titolo": "Tesi Sperimentale",
+      "descrizione": "BENCHMARK DI LINGUAGGI DI PROGRAMMAZIONE IN TERMINI DI CONSUMO ENERGETICO, MEMORIA E TEMPI DI ESECUZIONE.",
+      "immagine": "resurces/tesi-preview.png",
+      "tags": ["Python", "Java", "Rust", "C", "Javascript", "Benchmarking", "Energy consumption"],
+      "link": "https://github.com/PaoloCamedda/Programmazione_Egreen"
+    },
+    {
+      "titolo": "Server rest browser gaming",
+      "descrizione": "Implementazione di un server rest con api dinamiche che consentono di eseguire su brouser il classico gioco italiono della scopa.",
+      "immagine": "resurces/scopa.png",
+      "tags": ["Java", "Spring boot 3", "Tailwind css", "Vue.js 3", "Javascript"],
+      "link": "https://github.com/PaoloCamedda/scopa-game"
+    },
+    {
+      "titolo": "Android app",
+      "descrizione": "Applicazione mobile per la gestione di persone con ausilio di supervisione da parte di un caregiver, app che permettere di messagiare inserire delle task giornaliere o programmate e invio di posizione maps.",
+      "immagine": "resurces/tempo.png",
+      "tags": ["Kotlin", "Firebase","Api Rest", "Google Maps Api", "Android Studio"],
+      "link": "https://github.com/PaoloCamedda/Tieniiltempo"
+    },
+    {
+      "titolo": "Progetto IoT simulazione Casello",
+      "descrizione": "Un server rest centralizzato che va a gestire i microservizi sul campo interfacciato con mosquitto e un database SQL.",
+      "immagine": "resurces/auto.png",
+      "tags": ["Java","Spark", "MQTT", "Python"],
+      "link": "https://github.com/PaoloCamedda/Autostrade_Italiane"
+    },
+    {
+      "titolo": "HardwareHero",
+      "descrizione": "HardwareHero è l'applicazione definitiva HelpDesk per la gestione di stampanti zebra gk420d su macchine windows e risoluzioni di natura Software con la possibilita di autoaggiornarsi e di essere rilasciata periodicamente con dell patch.",
+      "immagine": "resurces/app_icon.png",
+      "tags": ["Python", "CustomTkinter", "Automation", "MVC", "Windows-Utlity"],
+      "link": "https://github.com/paolocam-bot/PyApp"
+    }
+  ],
+  "competenze": [
+    { "nome": "HTML5", "iconClass": "devicon-html5-plain colored" },
+    { "nome": "CSS3", "iconClass": "devicon-css3-plain colored" },
+    { "nome": "JavaScript", "iconClass": "devicon-javascript-plain colored" },
+    { "nome": "Python", "iconClass": "devicon-python-plain colored" },
+    { "nome": "SQL", "iconClass": "devicon-azuresqldatabase-plain colored" },
+    { "nome": "PostgreSQL", "iconClass": "devicon-postgresql-plain colored" },
+    { "nome": "React", "iconClass": "devicon-react-original colored" },
+    { "nome": "Node.js", "iconClass": "devicon-nodejs-plain colored" },
+    { "nome": "Linux", "iconClass": "devicon-linux-plain" },
+    { "nome": "macOS", "iconClass": "devicon-apple-original" },
+    { "nome": "Java", "iconClass": "devicon-java-plain colored" },
+    { "nome": "Linguaggio C", "iconClass": "devicon-c-plain custom-c" }
+  ]
+}

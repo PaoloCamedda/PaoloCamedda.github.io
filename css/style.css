@@ -9,12 +9,18 @@
     --card-bg: rgba(255, 255, 255, 0.95);
 }
 
-body {
+html, body {
     margin: 0;
+    padding: 0;
+    width: 100%;
     font-family: 'Roboto', sans-serif;
     color: var(--text-primary);
     background-color: var(--bg-matrix);
-    overflow: hidden;
+    
+    /* SBLOCCO SCROLL: Blocca lo scorrimento laterale e libera quello verticale */
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* Scrolling fluido su smartphone iOS/Android */
 }
 
 /* ----------------------- BACKGROUND MATRIX ----------------------- */
@@ -26,12 +32,14 @@ body {
     height: 100%;
     z-index: -1;
     background-color: #111;
+    pointer-events: none; /* Il tocco del dito passa attraverso il canvas e scorre la pagina */
 }
 
 /* ----------------------- LAYOUT WRAPPER ----------------------- */
 .wrapper {
     display: flex;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
 }
 
 /* ----------------------- SIDEBAR ----------------------- */
@@ -76,7 +84,6 @@ body {
 .content {
     flex: 1;
     padding: 60px;
-    overflow-y: auto;
     background: rgba(13, 17, 23, 0.6);
     backdrop-filter: blur(4px);
 }
@@ -121,34 +128,103 @@ section { margin-bottom: 50px; }
 }
 
 .studio-logo img {
-    width: 60px;          /* Dimensione fissa per rendere i loghi omogenei */
+    width: 60px;          
     height: 60px;
-    object-fit: contain;  /* Evita che il logo si deformi */
-    filter: grayscale(20%); /* Opzionale: per integrarlo meglio con lo stile Matrix */
+    object-fit: contain;  
+    filter: grayscale(20%); 
 }
 
-/* Controllo per mobile: se lo schermo è piccolo, mette il logo sopra il testo */
-@media (max-width: 768px) {
-    .card-studio {
-        flex-direction: column;
-        text-align: center;
-    }
+/* ----------------------- SEZIONE ESPERIENZE ----------------------- */
+.experience-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.exp-card {
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.exp-card:hover {
+    border-color: #00f0ff;
+    box-shadow: 0 5px 15px rgba(0, 240, 255, 0.05);
+}
+
+.exp-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 15px;
+}
+
+.exp-company-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.exp-title-block h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 1.25rem;
+}
+
+.exp-company {
+    margin: 4px 0 0 0;
+    color: #00f0ff; 
+    font-weight: 400;
+    font-size: 0.95rem;
+}
+
+.exp-company span {
+    color: #888; 
+    font-size: 0.9rem;
+}
+
+.exp-tasks {
+    list-style: none; 
+    padding-left: 0;
+    margin: 0;
+}
+
+.exp-tasks li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.exp-tasks li::before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #00f0ff;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
 }
 
 /* ----------------------- SEZIONE PROGETTI ----------------------- */
-
 .projects-grid {
     display: grid;
-    /* Crea colonne che si adattano da sole alla larghezza della pagina */
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
     padding: 10px 0;
 }
 
 .project-card {
-    background: var(--card-bg); /* Sfrutta il bianco semi-trasparente */
+    background: var(--card-bg); 
     border-radius: 15px;
-    overflow: hidden; /* Fondamentale per smussare gli angoli dell'immagine */
+    overflow: hidden; 
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
@@ -160,19 +236,17 @@ section { margin-bottom: 50px; }
     box-shadow: 0 15px 35px rgba(0,0,0,0.4);
 }
 
-/* Gestione Immagini Progetto */
 .project-image img {
     width: 100%;
     height: 200px;
-    object-fit: cover; /* Ritaglia l'immagine senza schiacciarla */
+    object-fit: cover; 
     border-bottom: 3px solid var(--accent);
     display: block;
 }
 
-/* Testi della Card */
 .project-info {
     padding: 20px;
-    flex-grow: 1; /* Fa sì che tutte le card abbiano la stessa altezza */
+    flex-grow: 1; 
     display: flex;
     flex-direction: column;
 }
@@ -190,7 +264,6 @@ section { margin-bottom: 50px; }
     margin-bottom: 20px;
 }
 
-/* Badge dei Linguaggi/Tecnologie */
 .project-tags {
     margin-bottom: 20px;
     display: flex;
@@ -199,7 +272,7 @@ section { margin-bottom: 50px; }
 }
 
 .project-tags span {
-    background: #e0f7f5; /* Un verde acqua molto leggero */
+    background: #e0f7f5; 
     color: var(--accent);
     padding: 4px 12px;
     border-radius: 20px;
@@ -209,16 +282,15 @@ section { margin-bottom: 50px; }
     border: 1px solid rgba(38, 166, 154, 0.2);
 }
 
-/* Pulsante GitHub */
 .project-links {
-    margin-top: auto; /* Spinge il bottone sempre in fondo alla card */
+    margin-top: auto; 
 }
 
 .btn-github {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background-color: #24292e; /* Grigio scuro ufficiale GitHub */
+    background-color: #24292e; 
     color: #ffffff !important;
     text-decoration: none;
     padding: 10px 20px;
@@ -237,16 +309,7 @@ section { margin-bottom: 50px; }
     font-size: 1.2rem;
 }
 
-/* Media Query per Mobile */
-@media (max-width: 480px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
 /* ----------------------- SEZIONE CERTIFICAZIONE ----------------------- */
-
-/* Rende l'intero blocco cliccabile senza alterare i testi */
 .cert-card-link {
     text-decoration: none;
     color: inherit;
@@ -254,53 +317,41 @@ section { margin-bottom: 50px; }
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Applica Flexbox alla card per affiancare il logo (a sinistra) e le info (a destra) */
 .cert-card-custom {
     display: flex;
     align-items: center;
-    overflow: hidden; /* Evita che elementi interni escano dai bordi arrotondati */
+    overflow: hidden; 
 }
 
-/* Effetto Hover sulla card del certificato */
 .cert-card-link:hover .cert-card-custom {
     transform: translateY(-5px);
-    border-color: #00f0ff; /* Cambia bordo in celeste Matrix al passaggio del mouse */
+    border-color: #00f0ff; 
     box-shadow: 0 5px 15px rgba(0, 240, 255, 0.2);
 }
 
-/* Contenitore del logo nella card certificazione */
 .cert-logo-frame {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.02); /* Sfondo leggerissimo per staccare dal nero */
+    background: rgba(255, 255, 255, 0.02); 
     padding: 15px;
-    
-    /* BLOCCA LA GRANDEZZA DEL CONTENITORE */
     width: 120px;
     min-width: 120px; 
     height: 120px;
 }
 
-/* Regola fissa per l'immagine del logo */
 .cert-ente-logo {
     width: 100%;
     height: 100%;
-    
-    /* FONDAMENTALE: mantiene le proporzioni corrette del logo senza stirarlo */
     object-fit: contain; 
-    
-    /* Opzionale: stile Matrix (un po' sbiadito che si illumina al passaggio del mouse) */
     filter: grayscale(50%) brightness(85%);
     transition: filter 0.2s ease-in-out;
 }
 
-/* Quando passi il mouse sulla card, il logo si illumina */
 .cert-card-link:hover .cert-ente-logo {
     filter: grayscale(0%) brightness(100%);
 }
 
-/* Stile per il testo dell'ente e anno */
 .cert-ente {
     color: #888;
     font-size: 0.9rem;
@@ -309,7 +360,6 @@ section { margin-bottom: 50px; }
     text-transform: uppercase;
 }
 
-/* Piccolo indicatore visivo in basso alla card */
 .btn-visualizza {
     display: inline-block;
     font-size: 0.85rem;
@@ -322,10 +372,9 @@ section { margin-bottom: 50px; }
     border-bottom-color: #00f0ff;
 }
 
-/* Adattamento della griglia per le certificazioni */
 .certifications-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Alzato a 350px per dare più respiro al layout orizzontale */
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
     gap: 25px;
     margin-top: 20px;
 }
@@ -366,136 +415,117 @@ section { margin-bottom: 50px; }
 }
 
 .devicon-apple-original { color: #000; }
+.custom-c { color: #A2D2FF !important; }
 
-.custom-c {
-    color: #A2D2FF !important;
+/* ----------------------- SEZIONE CONTATTI ----------------------- */
+.contact-container {
+    background: rgba(20, 25, 35, 0.85); 
+    backdrop-filter: blur(10px);        
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    margin-top: 20px;
 }
-    /* ----------------------- SEZIONE CONTATTI ----------------------- */
 
-    .contact-container {
-        background: rgba(20, 25, 35, 0.85); /* Sfondo scuro per far leggere il bianco */
-        backdrop-filter: blur(10px);        /* Effetto vetro sfocato sul Matrix */
-        padding: 40px;
-        border-radius: 15px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        text-align: center;
-        margin-top: 20px;
-    }
+.contact-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px; 
+    margin-bottom: 40px;
+    flex-wrap: wrap; 
+}
 
-    .contact-cards {
-        display: flex;
-        justify-content: center;
-        gap: 30px; /* Ridotto leggermente il gap per far stare tre icone comode */
-        margin-bottom: 40px;
-        flex-wrap: wrap; /* Fondamentale per farle andare a capo su schermi piccoli */
-    }
+.devicon-linkedin-plain { color: #0077b5; }
 
-    .devicon-linkedin-plain {
-        color: #0077b5; /* Il blu ufficiale di LinkedIn */
-    }
+.contact-item {
+    text-decoration: none;
+    color: #ffffff; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+}
 
-    .contact-item {
-        text-decoration: none;
-        color: #ffffff; /* Testo Email/GitHub in bianco */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        transition: all 0.3s ease;
-    }
+.contact-item i {
+    color: white;
+    transition: color 0.3s ease;
+    font-size: 3rem !important; 
+    margin-bottom: 10px;
+    display: block;
+}
 
-    .contact-item i {
-        color: white;
-        transition: color 0.3s ease;
-    }
+.contact-item:hover {
+    color: var(--accent); 
+    transform: translateY(-5px);
+}
 
-    .contact-item:hover {
-        color: var(--accent); /* Diventa celeste al passaggio del mouse */
-        transform: translateY(-5px);
-    }
+.contact-item:hover .devicon-linkedin-plain { color: #00a0dc; }
 
-    .contact-item:hover .devicon-linkedin-plain {
-        color: #00a0dc;
-    }
+.cv-download-section {
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
+    padding-top: 30px;
+}
 
-    /* --- Area Download CV --- */
-    .cv-download-section {
-        border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linea di divisione sottile */
-        padding-top: 30px;
-    }
+.cv-download-section p {
+    color: #ffffff !important; 
+    margin-bottom: 25px;
+    font-weight: 400;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
 
-    .cv-download-section p {
-        color: #ffffff !important; /* Forza il bianco per la leggibilità */
-        margin-bottom: 25px;
-        font-weight: 400;
-        font-size: 1.1rem;
-        letter-spacing: 0.5px;
-    }
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--accent);
+    color: #ffffff;
+    padding: 15px 35px;
+    border-radius: 50px; 
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(38, 166, 154, 0.3);
+}
 
-    /* --- Bottone Scarica CV --- */
-    .btn-download {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        background-color: var(--accent);
-        color: #ffffff;
-        padding: 15px 35px;
-        border-radius: 50px; /* Più arrotondato per un look moderno */
-        text-decoration: none;
-        font-weight: 600;
-        text-transform: uppercase;
-        font-size: 0.9rem;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(38, 166, 154, 0.3);
-    }
+.btn-download:hover {
+    background-color: #1f8a7f;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(38, 166, 154, 0.5);
+}
 
-    .btn-download:hover {
-        background-color: #1f8a7f;
-        transform: scale(1.05);
-        box-shadow: 0 6px 20px rgba(38, 166, 154, 0.5);
-    }
+.btn-download i { font-size: 1.3rem; }
 
-    .btn-download i {
-        font-size: 1.3rem;
-    }
+.contact-item, .contact-item:visited {
+    color: white !important;
+    text-decoration: none !important;
+}
 
-    .contact-item, .contact-item:visited {
-        color: white !important;
-        text-decoration: none !important;
-    }
+#contatti p { color: white !important; }
+.contact-item span {
+    color: white !important;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
 
-    #contatti p {
-        color: white !important;
-    }
-
-    .contact-item i {
-        font-size: 3rem !important; /* Rende le icone dei contatti grandi e visibili */
-        margin-bottom: 10px;
-        display: block;
-    }
-
-
-    .contact-item span {
-        color: white !important;
-        font-weight: 500;
-        text-transform: uppercase;
-        font-size: 0.9rem;
-    }
-
-
-    /* ==========================================================================
+/* ==========================================================================
    MEDIA QUERIES PER DISPOSITIVI MOBILI (Smartphone e Tablet piccoli)
    ========================================================================== */
-
 @media (max-width: 768px) {
-    /* Il wrapper non affianca più gli elementi ma li mette in colonna */
+    /* CORREZIONE: Sblocca l'altezza e permette lo scorrimento del wrapper */
     .wrapper {
         display: block;
+        height: auto;
+        overflow: visible;
     }
 
-    /* Gestione della Sidebar come menu a comparsa laterale */
     .sidebar {
         position: fixed;
-        left: -100%; /* Spostata fuori dallo schermo */
+        left: -100%; 
         top: 0;
         width: 270px;
         height: 100%;
@@ -505,18 +535,16 @@ section { margin-bottom: 50px; }
         overflow-y: auto;
     }
 
-    /* Classe attivata via JS al clic sull'hamburger */
-    .sidebar.active {
-        left: 0;
-    }
+    .sidebar.active { left: 0; }
 
-    /* Spazio per evitare che il contenuto finisca sotto il pulsante hamburger */
+    /* CORREZIONE: Sblocca l'altezza del content mobile */
     .content {
-        padding: 60px 20px 20px 20px; 
-        margin-left: 0 !important; /* Resetta eventuali margini fissi di sinistra */
+        padding: 80px 20px 20px 20px; 
+        margin-left: 0 !important; 
+        height: auto;
+        overflow: visible;
     }
 
-    /* Stile per il pulsante Hamburger */
     .hamburger {
         display: block;
         position: fixed;
@@ -524,7 +552,7 @@ section { margin-bottom: 50px; }
         left: 15px;
         z-index: 1000;
         background: rgba(0, 0, 0, 0.75);
-        border: 1px solid #00f0ff; /* Colore cyan/neon in linea con lo stile */
+        border: 1px solid #00f0ff; 
         color: #00f0ff;
         padding: 8px 12px;
         font-size: 24px;
@@ -533,20 +561,22 @@ section { margin-bottom: 50px; }
         backdrop-filter: blur(5px);
     }
 
-    /* Griglie reattive: una sola colonna sui telefoni */
-    .projects-grid, .skills-grid, .card-horizontal {
+    .projects-grid, .skills-grid, .card-horizontal, .experience-timeline {
         grid-template-columns: 1fr !important;
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
+
+    .project-card { flex-direction: column; }
     
-    .project-card {
-        flex-direction: column; /* L'immagine del progetto va sopra il testo */
+    .exp-header {
+        flex-direction: column;
+        text-align: center;
     }
 
     .cert-card-custom {
-        flex-direction: column; /* Sposta il logo sopra e il testo sotto sugli smartphone */
+        flex-direction: column; 
         text-align: center;
     }
 
@@ -558,17 +588,12 @@ section { margin-bottom: 50px; }
         border-right: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
-
-
-
-
 }
 
-/* Nasconde il pulsante hamburger sui monitor desktop */
+@media (max-width: 480px) {
+    .projects-grid { grid-template-columns: 1fr; }
+}
+
 @media (min-width: 769px) {
-    .hamburger {
-        display: none;
-    }
+    .hamburger { display: none; }
 }
-
-

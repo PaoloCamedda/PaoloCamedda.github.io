@@ -2,11 +2,13 @@
   "studi": [
     {
       "istituto": "Università del Piemonte Orientale",
-      "titolo": "LAUREA IN INFORMATICA (2022-2025)"
+      "titolo": "LAUREA IN INFORMATICA (2022-2025)",
+      "logo": "resurces/upo-logo.png"
     },
     {
       "istituto": "ITIS Othoca",
-      "titolo": "DIPLOMA IN INFORMATICA (2012-2017)"
+      "titolo": "DIPLOMA IN INFORMATICA (2012-2017)",
+      "logo": "resurces/othoca-logo.png"
     }
   ],
   "progetti": [
@@ -44,6 +46,57 @@
       "immagine": "resurces/app_icon.png",
       "tags": ["Python", "CustomTkinter", "Automation", "MVC", "Windows-Utlity"],
       "link": "https://github.com/paolocam-bot/PyApp"
+    }
+  ],
+  "certificazioni": [
+    {
+      "titolo": "Formazione Generale Lavoratori (D.Lgs. 81/08)",
+      "ente": "Upo",
+      "anno": "2025",
+      "immagine": "resurces/upo-logo.png",
+      "link": "resurces/Attestato_Generale.pdf"
+    },
+    {
+      "titolo": "Sicurezza sul Lavoro - Rischio basso",
+      "ente": "Upo",
+      "anno": "2025",
+      "immagine": "resurces/upo-logo.png",
+      "link": "resurces/Attestato_rischio_basso.pdf"
+    },
+    {
+      "titolo": "Sicurezza sul Lavoro - Rischio medio",
+      "ente": "Upo",
+      "anno": "2025",
+      "immagine": "resurces/upo-logo.png",
+      "link": "resurces/Attestato_rischio_MEDIO.pdf"
+    },
+    {
+      "titolo": "Sicurezza sul Lavoro",
+      "ente": "Anfos",
+      "anno": "2026",
+      "immagine": "resurces/logo-anfos.png",
+      "link": "resurces/attestato.pdf"
+    },
+    {
+      "titolo": "Corso claude code academy",
+      "ente": "Claude",
+      "anno": "2026",
+      "immagine": "resurces/logo-claude.png",
+      "link": "resurces/claude_code.pdf"
+    },
+    {
+      "titolo": "Corso claude cowork academy",
+      "ente": "Claude",
+      "anno": "2026",
+      "immagine": "resurces/logo-claude.png",
+      "link": "resurces/claude_cowork.pdf"
+    },
+    {
+      "titolo": "Corso claude platform academy",
+      "ente": "Claude",
+      "anno": "2026",
+      "immagine": "resurces/logo-claude.png",
+      "link": "resurces/claude_platform.pdf"
     }
   ],
   "competenze": [

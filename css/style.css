@@ -112,6 +112,29 @@ section { margin-bottom: 50px; }
     color: #1a1a1a;
 }
 
+/* Allineamento card studi con logo */
+.card-studio {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+}
+
+.studio-logo img {
+    width: 60px;          /* Dimensione fissa per rendere i loghi omogenei */
+    height: 60px;
+    object-fit: contain;  /* Evita che il logo si deformi */
+    filter: grayscale(20%); /* Opzionale: per integrarlo meglio con lo stile Matrix */
+}
+
+/* Controllo per mobile: se lo schermo è piccolo, mette il logo sopra il testo */
+@media (max-width: 768px) {
+    .card-studio {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
 /* ----------------------- SEZIONE PROGETTI ----------------------- */
 
 .projects-grid {
@@ -219,6 +242,92 @@ section { margin-bottom: 50px; }
     .projects-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* ----------------------- SEZIONE CERTIFICAZIONE ----------------------- */
+
+/* Rende l'intero blocco cliccabile senza alterare i testi */
+.cert-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Applica Flexbox alla card per affiancare il logo (a sinistra) e le info (a destra) */
+.cert-card-custom {
+    display: flex;
+    align-items: center;
+    overflow: hidden; /* Evita che elementi interni escano dai bordi arrotondati */
+}
+
+/* Effetto Hover sulla card del certificato */
+.cert-card-link:hover .cert-card-custom {
+    transform: translateY(-5px);
+    border-color: #00f0ff; /* Cambia bordo in celeste Matrix al passaggio del mouse */
+    box-shadow: 0 5px 15px rgba(0, 240, 255, 0.2);
+}
+
+/* Contenitore del logo nella card certificazione */
+.cert-logo-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.02); /* Sfondo leggerissimo per staccare dal nero */
+    padding: 15px;
+    
+    /* BLOCCA LA GRANDEZZA DEL CONTENITORE */
+    width: 120px;
+    min-width: 120px; 
+    height: 120px;
+}
+
+/* Regola fissa per l'immagine del logo */
+.cert-ente-logo {
+    width: 100%;
+    height: 100%;
+    
+    /* FONDAMENTALE: mantiene le proporzioni corrette del logo senza stirarlo */
+    object-fit: contain; 
+    
+    /* Opzionale: stile Matrix (un po' sbiadito che si illumina al passaggio del mouse) */
+    filter: grayscale(50%) brightness(85%);
+    transition: filter 0.2s ease-in-out;
+}
+
+/* Quando passi il mouse sulla card, il logo si illumina */
+.cert-card-link:hover .cert-ente-logo {
+    filter: grayscale(0%) brightness(100%);
+}
+
+/* Stile per il testo dell'ente e anno */
+.cert-ente {
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Piccolo indicatore visivo in basso alla card */
+.btn-visualizza {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: #00f0ff;
+    border-bottom: 1px dashed transparent;
+    transition: border 0.2s;
+}
+
+.cert-card-link:hover .btn-visualizza {
+    border-bottom-color: #00f0ff;
+}
+
+/* Adattamento della griglia per le certificazioni */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Alzato a 350px per dare più respiro al layout orizzontale */
+    gap: 25px;
+    margin-top: 20px;
 }
 
 /* ----------------------- SEZIONE COMPETENZE ----------------------- */
@@ -435,6 +544,24 @@ section { margin-bottom: 50px; }
     .project-card {
         flex-direction: column; /* L'immagine del progetto va sopra il testo */
     }
+
+    .cert-card-custom {
+        flex-direction: column; /* Sposta il logo sopra e il testo sotto sugli smartphone */
+        text-align: center;
+    }
+
+    .cert-logo-frame {
+        width: 100% !important;
+        max-width: 100%;
+        min-width: 100%;
+        height: 130px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+
+
+
 }
 
 /* Nasconde il pulsante hamburger sui monitor desktop */
@@ -443,3 +570,5 @@ section { margin-bottom: 50px; }
         display: none;
     }
 }
+
+

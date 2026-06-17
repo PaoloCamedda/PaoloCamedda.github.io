@@ -33,6 +33,27 @@
       "link": "https://github.com/PaoloCamedda/Programmazione_Egreen"
     },
     {
+      "titolo": "HardwareHero",
+      "descrizione": "HardwareHero è l'applicazione HelpDesk per la gestione di stampanti zebra gk420d su macchine windows e risoluzioni di natura Software con la possibilita di autoaggiornarsi e di essere rilasciata periodicamente con dell patch. \n Applicazione desktop sviluppata presso Gioielleri di Valenza per automatizzare il lavoro.",
+      "immagine": "resurces/app_icon.png",
+      "tags": ["Python", "CustomTkinter", "Automation", "MVC", "Windows-Utlity"],
+      "link": "https://github.com/paolocam-bot/PyApp"
+    },
+    {
+      "titolo": "Mail check breack",
+      "descrizione": "Mail check breack è un applicazione desktop sviluppata per il controllo di sinogole mail o liste di email per il controllo di eventuali violazioni di sicurezza relative a passwoed e username.",
+      "immagine": "resurces/mail.png",
+      "tags": ["Python", "CustomTkinter", "Automation", "MVC", "Mail-Utility"],
+      "link": "https://github.com/paolocam-bot/Mail_check_breack"
+    },
+    {
+      "titolo": "Applicazione Gestionale Ospedaliera",
+      "descrizione": "Applicazione Gestionale Ospedaliera, con il slavataggio e caricamento di dati, la possibilità di inserimento e rimozioni di visite e di ricoverati. L'applicazione è stata sviluppata con sceneBuilder e JavaFX.",
+      "immagine": "resurces/app.png",
+      "tags": ["java", "javaFX", "sceneBuilder"],
+      "link": "https://github.com/PaoloCamedda/Trial_App"
+    },
+    {
       "titolo": "Server rest browser gaming",
       "descrizione": "Implementazione di un server rest con api dinamiche che consentono di eseguire su brouser il classico gioco italiono della scopa.",
       "immagine": "resurces/scopa.png",
@@ -54,12 +75,20 @@
       "link": "https://github.com/PaoloCamedda/Autostrade_Italiane"
     },
     {
-      "titolo": "HardwareHero",
-      "descrizione": "HardwareHero è l'applicazione HelpDesk per la gestione di stampanti zebra gk420d su macchine windows e risoluzioni di natura Software con la possibilita di autoaggiornarsi e di essere rilasciata periodicamente con dell patch. \n Applicazione desktop sviluppata presso Gioielleri di Valenza per automatizzare il lavoro.",
-      "immagine": "resurces/app_icon.png",
-      "tags": ["Python", "CustomTkinter", "Automation", "MVC", "Windows-Utlity"],
-      "link": "https://github.com/paolocam-bot/PyApp"
+      "titolo": "Web site Like steam E-commerce",
+      "descrizione": "Sito web di e-commerce ispirato a steam, singol page Server-Side Rendering (SSR) con api dinamiche e rotte prottette, gestione di password criptate e registrazione al sito per utenti.",
+      "immagine": "resurces/steam.png",
+      "tags": ["JavaScript", "HTML5", "CSS3", "Express", "Node","SQLite","Bootstrap"],
+      "link": "https://github.com/PaoloCamedda/Steam_Clone"
+    },
+    {
+      "titolo": "Database Postgrass",
+      "descrizione": "Database relazionale per la gestione di un e-commerce di videogiochi, con tabelle per utenti, prodotti, ordini e recensioni, implementato in PostgreSQL.",
+      "immagine": "resurces/postgress.png",
+      "tags": ["PostgreSQL", "Database Design", "SQL", "E-commerce"],
+      "link": "https://github.com/PaoloCamedda/Database_Postgrass"
     }
+
   ],
   "certificazioni": [
     {

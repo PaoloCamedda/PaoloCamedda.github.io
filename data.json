@@ -11,6 +11,19 @@
       "logo": "resurces/othoca-logo.png"
     }
   ],
+  "esperienze": [
+    {
+      "ruolo": "Help Desk & IT Innovation Specialist",
+      "azienda": "Azienda Gioielleria",
+      "periodo": "2026 - in corso",
+      "logo": "resurces/", 
+      "compiti": [
+        "Gestione ticket di assistenza tecnica hardware e software interna.",
+        "Sviluppo di applicazioni di automazione in Python per la gestione dei driver delle stampanti di etichette.",
+        "Risoluzione di problematiche sistemistiche e manutenzione dei dispositivi aziendali."
+      ]
+    }
+  ],
   "progetti": [
     {
       "titolo": "Tesi Sperimentale",
@@ -42,7 +55,7 @@
     },
     {
       "titolo": "HardwareHero",
-      "descrizione": "HardwareHero è l'applicazione definitiva HelpDesk per la gestione di stampanti zebra gk420d su macchine windows e risoluzioni di natura Software con la possibilita di autoaggiornarsi e di essere rilasciata periodicamente con dell patch.",
+      "descrizione": "HardwareHero è l'applicazione HelpDesk per la gestione di stampanti zebra gk420d su macchine windows e risoluzioni di natura Software con la possibilita di autoaggiornarsi e di essere rilasciata periodicamente con dell patch. \n Applicazione desktop sviluppata presso Gioielleri di Valenza per automatizzare il lavoro.",
       "immagine": "resurces/app_icon.png",
       "tags": ["Python", "CustomTkinter", "Automation", "MVC", "Windows-Utlity"],
       "link": "https://github.com/paolocam-bot/PyApp"

@@ -4,9 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => response.json())
         .then(data => {
             popolaStudi(data.studi);
+            
+            // Caricamento della nuova sezione Esperienze Lavorative
+            if (data.esperienze) {
+                popolaEsperienze(data.esperienze);
+            }
+            
             popolaProgetti(data.progetti);
             
-            // AGGIUNTA: Ora chiamiamo la funzione passando l'array del JSON
             if (data.certificazioni) {
                 popolaCertificazioni(data.certificazioni);
             }
@@ -30,6 +35,27 @@ document.addEventListener("DOMContentLoaded", () => {
                     <h3>${studio.istituto}</h3>
                     <p>${studio.titolo}</p>
                 </div>
+            </div>
+        `).join('');
+    }
+
+    // Funzione per generare la sezione delle Esperienze Lavorative
+    function popolaEsperienze(esperienze) {
+        const container = document.getElementById("experience-timeline");
+        if (!container) return;
+
+        container.innerHTML = esperienze.map(exp => `
+            <div class="card exp-card">
+                <div class="exp-header">
+                    ${exp.logo ? `<img src="${exp.logo}" alt="Logo ${exp.azienda}" class="exp-company-logo">` : ''}
+                    <div class="exp-title-block">
+                        <h3>${exp.ruolo}</h3>
+                        <h4 class="exp-company">${exp.azienda} — <span>${exp.periodo}</span></h4>
+                    </div>
+                </div>
+                <ul class="exp-tasks">
+                    ${exp.compiti.map(task => `<li>${task}</li>`).join('')}
+                </ul>
             </div>
         `).join('');
     }

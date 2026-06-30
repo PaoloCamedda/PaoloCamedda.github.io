@@ -32,9 +32,16 @@
       "tags": ["Python", "Java", "Rust", "C", "Javascript", "Benchmarking", "Energy consumption"],
       "link": "https://github.com/PaoloCamedda/Programmazione_Egreen"
     },
+     {
+      "titolo": "Holly Desk",
+      "descrizione": "un applicazione desktop per Helpdesker che tiene traccia di tutte le problematiche che si verificano in un lavoro aziendale e gli step per la risoluzioe, in più tiene traccia degli interventi effetuati e di cosa si è andati a effetuare.",
+      "immagine": "resurces/holly.png",
+      "tags": ["Python", "OOP", "CustomTkinter", "Automation", "MVC", "Windows-Utlity"],
+      "link": "https://github.com/paolocam-bot/bible"
+    },
     {
-      "titolo": "HardwareHero",
-      "descrizione": "HardwareHero è l'applicazione HelpDesk per la gestione di stampanti zebra gk420d su macchine windows e risoluzioni di natura Software con la possibilita di autoaggiornarsi e di essere rilasciata periodicamente con dell patch. \n Applicazione desktop sviluppata presso Gioielleri di Valenza per automatizzare il lavoro.",
+      "titolo": "Controllo stampanti (HardwareHero)",
+      "descrizione": "HardwareHero è l'applicazione HelpDesk per la gestione di problemi di natura comune e di installazione e manutenzione stampanti zebra gk420d su macchine windows e risoluzioni di natura Software con la possibilita di autoaggiornarsi e di essere rilasciata periodicamente con dell patch. \n Applicazione desktop sviluppata presso Gioielleri di Valenza per automatizzare il lavoro.",
       "immagine": "resurces/app_icon.png",
       "tags": ["Python", "CustomTkinter", "Automation", "MVC", "Windows-Utlity"],
       "link": "https://github.com/paolocam-bot/PyApp"

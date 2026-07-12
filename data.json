@@ -14,13 +14,39 @@
   "esperienze": [
     {
       "ruolo": "Help Desk & IT Innovation Specialist",
-      "azienda": "Azienda Gioielleria",
+      "azienda": "Gioielli di Valenza (Valenza)",
       "periodo": "2026 - in corso",
       "logo": "resurces/", 
       "compiti": [
-        "Gestione ticket di assistenza tecnica hardware e software interna.",
-        "Sviluppo di applicazioni di automazione in Python per la gestione dei driver delle stampanti di etichette.",
-        "Risoluzione di problematiche sistemistiche e manutenzione dei dispositivi aziendali."
+        "Responsabile del corretto funzionamento dell'infrastruttura PC, hardware e software a livello centralizzato.",
+        "Gestione, monitoraggio e troubleshooting remoto dei sistemi informatici e delle reti aziendali per i punti vendita distribuiti sul territorio nazionale.",
+        "Sviluppo di script di automazione in Python e Bash per l'installazione massiva di software su Windows e la generazione automatica dei file di configurazione per i negozi.",
+        "Progettazione e programmazione di applicativi interni (es. gestione e automazione driver stampanti termiche) per l'ottimizzazione dei processi operativi di help desk.",
+        "Risoluzione di problematiche sistemistiche complesse, manutenzione dei dispositivi aziendali e supporto tecnico di secondo livello."
+      ]
+    },
+    {
+      "ruolo": "Addetto ai distributori di carburanti ed assimilati",
+      "azienda": "COST.ANT. SNC (Oristano)",
+      "periodo": "02/2022 - 08/2022",
+      "logo": "resurces/", 
+      "compiti": [
+        "Gestione del servizio di rifornimento carburante e supervisione dei sistemi di pagamento automatici.",
+        "Ricezione dei carichi di carburante e merci con relativa gestione e controllo delle bolle di carico/scarico (DAS e DDT).",
+        "Vendita al dettaglio di articoli per l'automotive (olio motore, liquidi, lampadine) e assistenza al cliente.",
+        "Gestione autonoma della cassa, dei corrispettivi e delle chiusure giornaliere."
+      ]
+    },
+    {
+      "ruolo": "Tecnico gestore di reti e di sistemi telematici (Tirocinio)",
+      "azienda": "GESTALA S.R.L. (Arborea)",
+      "periodo": "06/2021 - 10/2021",
+      "logo": "resurces/", 
+      "compiti": [
+        "Supporto nella configurazione, installazione e manutenzione di client Windows, driver e periferiche di rete.",
+        "Diagnosi tempestiva e risoluzione di problematiche hardware e software (Help Desk di secondo livello).",
+        "Sviluppo di script e piccoli applicativi di automazione interna per l'ottimizzazione dei processi aziendali.",
+        "Collaborazione al monitoraggio della rete locale aziendale e alla verifica dei sistemi di backup."
       ]
     }
   ],
@@ -37,21 +63,28 @@
       "descrizione": "un applicazione desktop per Helpdesker che tiene traccia di tutte le problematiche che si verificano in un lavoro aziendale e gli step per la risoluzioe, in più tiene traccia degli interventi effetuati e di cosa si è andati a effetuare.",
       "immagine": "resurces/holly.png",
       "tags": ["Python", "OOP", "CustomTkinter", "Automation", "MVC", "Windows-Utlity"],
-      "link": "https://github.com/paolocam-bot/bible"
+      "link": "https://github.com/PaoloCamedda/biblemanual"
     },
     {
       "titolo": "Controllo stampanti (HardwareHero)",
       "descrizione": "HardwareHero è l'applicazione HelpDesk per la gestione di problemi di natura comune e di installazione e manutenzione stampanti zebra gk420d su macchine windows e risoluzioni di natura Software con la possibilita di autoaggiornarsi e di essere rilasciata periodicamente con dell patch. \n Applicazione desktop sviluppata presso Gioielleri di Valenza per automatizzare il lavoro.",
       "immagine": "resurces/app_icon.png",
       "tags": ["Python", "CustomTkinter", "Automation", "MVC", "Windows-Utlity"],
-      "link": "https://github.com/paolocam-bot/PyApp"
+      "link": "https://github.com/PaoloCamedda/PyApp"
     },
     {
       "titolo": "Mail check breack",
       "descrizione": "Mail check breack è un applicazione desktop sviluppata per il controllo di sinogole mail o liste di email per il controllo di eventuali violazioni di sicurezza relative a passwoed e username.",
       "immagine": "resurces/mail.png",
       "tags": ["Python", "CustomTkinter", "Automation", "MVC", "Mail-Utility"],
-      "link": "https://github.com/paolocam-bot/Mail_check_breack"
+      "link": "https://github.com/PaoloCamedda/Mail_check_breack"
+    },
+    {
+      "titolo": "Script di automazione per gestire il lavoro da tecnico informatico",
+      "descrizione": "Cartella contenente i miei script creati per facilitarmi il lavoro creando automazioni per installazioni creazioni di file da mobileconfig a csv ecc.",
+      "immagine": "resurces/",
+      "tags": ["Python", "Bash", "automation"],
+      "link": "https://github.com/PaoloCamedda/script"
     },
     {
       "titolo": "Applicazione Gestionale Ospedaliera",

@@ -13,9 +13,9 @@
   ],
   "esperienze": [
     {
-      "ruolo": "Help Desk & IT Innovation Specialist",
+      "ruolo": "Tecnico Informatico & IT Innovation Specialist",
       "azienda": "Gioielli di Valenza (Valenza)",
-      "periodo": "2026 - in corso",
+      "periodo": "06/2026 - in corso",
       "logo": "resurces/", 
       "compiti": [
         "Responsabile del corretto funzionamento dell'infrastruttura PC, hardware e software a livello centralizzato.",
@@ -43,10 +43,10 @@
       "periodo": "06/2021 - 10/2021",
       "logo": "resurces/", 
       "compiti": [
-        "Supporto nella configurazione, installazione e manutenzione di client Windows, driver e periferiche di rete.",
-        "Diagnosi tempestiva e risoluzione di problematiche hardware e software (Help Desk di secondo livello).",
-        "Sviluppo di script e piccoli applicativi di automazione interna per l'ottimizzazione dei processi aziendali.",
-        "Collaborazione al monitoraggio della rete locale aziendale e alla verifica dei sistemi di backup."
+        "Monitoraggio proattivo dell'infrastruttura di rete (LAN/WAN) e dei sistemi aziendali tramite software dedicati, garantendo la continuità del servizio",
+        "Supporto nella configurazione e manutenzione di apparati di rete, inclusi switch, router e access point Wi-Fi, con gestione e segmentazione di VLAN.",
+        "Installazione e configurazione di sistemi operativi (Windows, Linux), curandone l'ottimizzazione.",
+        "CAssistenza tecnica di 1° livello (Help Desk) a utenti interni per la risoluzione tempestiva di problematiche hardware, software e di connettività."
       ]
     }
   ],

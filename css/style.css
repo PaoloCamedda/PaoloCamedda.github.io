@@ -9,18 +9,25 @@
     --card-bg: rgba(255, 255, 255, 0.95);
 }
 
+html {
+    background-color: var(--bg-matrix);
+}
+
 html, body {
     margin: 0;
     padding: 0;
     width: 100%;
     font-family: 'Roboto', sans-serif;
     color: var(--text-primary);
-    background-color: var(--bg-matrix);
     
     /* SBLOCCO SCROLL: Blocca lo scorrimento laterale e libera quello verticale */
     overflow-x: hidden;
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch; /* Scrolling fluido su smartphone iOS/Android */
+    -webkit-overflow-scrolling: touch;
+}
+
+body {
+    background-color: transparent;
 }
 
 /* ----------------------- BACKGROUND MATRIX ----------------------- */
@@ -153,7 +160,8 @@ section { margin-bottom: 50px; }
 
 .exp-card {
     padding: 25px;
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(15, 20, 30, 0.85); 
+    backdrop-filter: blur(6px);         
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 8px;
     transition: border-color 0.2s, box-shadow 0.2s;

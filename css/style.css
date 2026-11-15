@@ -40,16 +40,24 @@ html, body {
     display: flex;
     width: 100%;
     min-height: 100vh;
+    align-items: flex-start;
 }
 
 /* ----------------------- SIDEBAR ----------------------- */
 .sidebar {
-    width: 280px;
+    width: 240px;
     background-color: var(--sidebar-bg);
     padding: 40px;
     display: flex;
     flex-direction: column;
     z-index: 10;
+
+    /* Rende la sidebar fissa in primo piano */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto; /* Se il menu è lungo, mantiene lo scroll interno */
 }
 
 .avatar-frame {
@@ -86,6 +94,7 @@ html, body {
     padding: 60px;
     background: rgba(13, 17, 23, 0.6);
     backdrop-filter: blur(4px);
+    margin-left: 280px;
 }
 
 h2 {

@@ -25,16 +25,20 @@ document.addEventListener("DOMContentLoaded", () => {
         const container = document.getElementById("studi-list");
         if (!container) return;
         container.innerHTML = studi.map(studio => `
-            <div class="card card-studio">
-                ${studio.logo ? `
-                <div class="studio-logo">
-                    <img src="${studio.logo}" alt="Logo ${studio.istituto}">
+            <div class="card-studio">
+                <div class="studio-header">
+                    ${studio.logo ? `
+                    <div class="studio-logo">
+                        <img src="${studio.logo}" alt="Logo ${studio.istituto}">
+                    </div>
+                    ` : ''}
+                    <div class="studio-title-group">
+                        ${studio.periodo ? `<span class="studio-period">${studio.periodo}</span>` : ''}
+                        <h3>${studio.titolo}</h3>
+                        <h4 class="studio-institute">${studio.istituto}</h4>
+                    </div>
                 </div>
-                ` : ''}
-                <div class="studio-info">
-                    <h3>${studio.istituto}</h3>
-                    <p>${studio.titolo}</p>
-                </div>
+                ${studio.dettagli ? `<p class="studio-details">${studio.dettagli}</p>` : ''}
             </div>
         `).join('');
     }
@@ -87,57 +91,70 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Funzione per mostrare le Certificazioni con i loghi (basata sul campo cert.immagine)
     function popolaCertificazioni(certificazioni) {
-    const container = document.getElementById("certifications-grid");
-    if (!container) return;
-    
-    container.innerHTML = certificazioni.map(cert => {
-        // Controlla se il link esiste ed è diverso da "NONE" (gestendo anche eventuali maiuscole/minuscole)
-        const hasLink = cert.link && cert.link.toUpperCase() !== "NONE";
-        
-        // Sceglie se usare il tag <a> (cliccabile) o un <div> (non cliccabile)
-        const wrapperTag = hasLink ? 'a' : 'div';
-        const wrapperAttrs = hasLink 
-            ? `href="${cert.link}" target="_blank" class="cert-card-link"` 
-            : `class="cert-card-link cert-card-disabled"`; // Puoi aggiungere una classe CSS specifica se vuoi stilizzarlo diversamente
+        const container = document.getElementById("certifications-grid");
+        if (!container) return;
 
-        return `
-            <${wrapperTag} ${wrapperAttrs}>
-                <div class="project-card cert-card-custom">
-                    
-                    <div class="cert-logo-frame">
-                        ${cert.immagine ? `
-                            <img src="${cert.immagine}" alt="Logo ${cert.ente}" class="cert-ente-logo">
-                        ` : `
-                            <i class="devicon-file-pdf" style="font-size: 50px; color: rgba(255,255,255,0.2);"></i>
-                        `}
+        container.innerHTML = certificazioni.map(cert => {
+            const hasLink = cert.link && cert.link.trim().toUpperCase() !== "NONE";
+
+            const wrapperTag = hasLink ? 'a' : 'div';
+            const wrapperAttrs = hasLink
+                ? `href="${cert.link}" target="_blank" rel="noopener noreferrer" class="cert-card-link"`
+                : `class="cert-card-link cert-card-disabled"`;
+
+            return `
+                <${wrapperTag} ${wrapperAttrs}>
+                    <div class="cert-card">
+                        <div class="cert-logo-frame ${!cert.immagine ? 'no-logo' : ''}">
+                            ${cert.immagine ? `
+                                <img src="${cert.immagine}" alt="Logo ${cert.ente}" class="cert-ente-logo">
+                            ` : `
+                                <i class="devicon-file-pdf"></i>
+                            `}
+                        </div>
+
+                        <div class="cert-info">
+                            ${cert.anno ? `<span class="cert-year">${cert.anno}</span>` : ''}
+                            <h3>${cert.titolo}</h3>
+                            <p class="cert-ente">${cert.ente}</p>
+
+                            ${hasLink ? `
+                                <span class="btn-visualizza">
+                                    <i class="devicon-file-pdf"></i> Apri PDF
+                                </span>
+                            ` : ''}
+                        </div>
                     </div>
-
-                    <div class="project-info">
-                        <h3>${cert.titolo}</h3>
-                        <p class="cert-ente">${cert.ente} — ${cert.anno}</p>
-                        
-                        ${hasLink ? `
-                            <span class="btn-visualizza"><i class="devicon-file-pdf"></i> Apri PDF</span>
-                        ` : ''}
-                    </div>
-
-                </div>
-            </${wrapperTag}>
-        `;
-    }).join('');
-}
+                </${wrapperTag}>
+            `;
+        }).join('');
+    }
 
     // Funzione per generare le icone delle Competenze
     function popolaCompetenze(competenze) {
-        const container = document.getElementById("skills-grid");
-        if (!container) return;
-        container.innerHTML = competenze.map(skill => `
-            <div class="skill-item">
-                <i class="${skill.iconClass}"></i>
-                <span>${skill.nome}</span>
+    const container = document.getElementById("skills-grid");
+    if (!container || !competenze.length) return;
+
+    // Nuovo layout categorizzato
+    if (competenze[0].categoria) {
+        container.innerHTML = competenze.map(gruppo => `
+            <div class="skill-category-card">
+                <h3 class="skill-category-title">${gruppo.categoria}</h3>
+                <div class="skill-pills-list">
+                    ${gruppo.items.map(skill => `
+                        <div class="skill-pill">
+                            <i class="${skill.iconClass}"></i>
+                            <div class="skill-pill-text">
+                                <span class="skill-name">${skill.nome}</span>
+                                ${skill.dettaglio ? `<span class="skill-detail">${skill.dettaglio}</span>` : ''}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
             </div>
         `).join('');
     }
+}
 
     // 2. GESTIONE HAMBURGER MENU PER DISPOSITIVI MOBILI
     const hamburger = document.getElementById("hamburger");

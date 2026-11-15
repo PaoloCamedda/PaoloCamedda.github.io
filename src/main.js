@@ -87,11 +87,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Funzione per mostrare le Certificazioni con i loghi (basata sul campo cert.immagine)
     function popolaCertificazioni(certificazioni) {
-        const container = document.getElementById("certifications-grid");
-        if (!container) return;
+    const container = document.getElementById("certifications-grid");
+    if (!container) return;
+    
+    container.innerHTML = certificazioni.map(cert => {
+        // Controlla se il link esiste ed è diverso da "NONE" (gestendo anche eventuali maiuscole/minuscole)
+        const hasLink = cert.link && cert.link.toUpperCase() !== "NONE";
         
-        container.innerHTML = certificazioni.map(cert => `
-            <a href="${cert.link}" target="_blank" class="cert-card-link">
+        // Sceglie se usare il tag <a> (cliccabile) o un <div> (non cliccabile)
+        const wrapperTag = hasLink ? 'a' : 'div';
+        const wrapperAttrs = hasLink 
+            ? `href="${cert.link}" target="_blank" class="cert-card-link"` 
+            : `class="cert-card-link cert-card-disabled"`; // Puoi aggiungere una classe CSS specifica se vuoi stilizzarlo diversamente
+
+        return `
+            <${wrapperTag} ${wrapperAttrs}>
                 <div class="project-card cert-card-custom">
                     
                     <div class="cert-logo-frame">
@@ -105,13 +115,17 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="project-info">
                         <h3>${cert.titolo}</h3>
                         <p class="cert-ente">${cert.ente} — ${cert.anno}</p>
-                        <span class="btn-visualizza"><i class="devicon-file-pdf"></i> Apri PDF</span>
+                        
+                        ${hasLink ? `
+                            <span class="btn-visualizza"><i class="devicon-file-pdf"></i> Apri PDF</span>
+                        ` : ''}
                     </div>
 
                 </div>
-            </a>
-        `).join('');
-    }
+            </${wrapperTag}>
+        `;
+    }).join('');
+}
 
     // Funzione per generare le icone delle Competenze
     function popolaCompetenze(competenze) {

@@ -15,8 +15,8 @@
     {
       "ruolo": "Tecnico Informatico & IT Innovation Specialist",
       "azienda": "Gioielli di Valenza (Valenza)",
-      "periodo": "06/2026 - in corso",
-      "logo": "resurces/", 
+      "periodo": "2026 - 2026",
+      "logo": "resurces/gv.png", 
       "compiti": [
         "Responsabile del corretto funzionamento dell'infrastruttura PC, hardware e software a livello centralizzato.",
         "Gestione, monitoraggio e troubleshooting remoto dei sistemi informatici e delle reti aziendali per i punti vendita distribuiti sul territorio nazionale.",
@@ -28,8 +28,8 @@
     {
       "ruolo": "Addetto ai distributori di carburanti ed assimilati",
       "azienda": "COST.ANT. SNC (Oristano)",
-      "periodo": "02/2022 - 08/2022",
-      "logo": "resurces/", 
+      "periodo": "2022 - 2022",
+      "logo": "resurces/esso.png", 
       "compiti": [
         "Gestione del servizio di rifornimento carburante e supervisione dei sistemi di pagamento automatici.",
         "Ricezione dei carichi di carburante e merci con relativa gestione e controllo delle bolle di carico/scarico (DAS e DDT).",
@@ -40,8 +40,8 @@
     {
       "ruolo": "Tecnico gestore di reti e di sistemi telematici (Tirocinio)",
       "azienda": "GESTALA S.R.L. (Arborea)",
-      "periodo": "06/2021 - 10/2021",
-      "logo": "resurces/", 
+      "periodo": "2021 - 2021",
+      "logo": "resurces/HC.png", 
       "compiti": [
         "Monitoraggio proattivo dell'infrastruttura di rete (LAN/WAN) e dei sistemi aziendali tramite software dedicati, garantendo la continuità del servizio",
         "Supporto nella configurazione e manutenzione di apparati di rete, inclusi switch, router e access point Wi-Fi, con gestione e segmentazione di VLAN.",
@@ -82,7 +82,7 @@
     {
       "titolo": "Script di automazione per gestire il lavoro da tecnico informatico",
       "descrizione": "Cartella contenente i miei script creati per facilitarmi il lavoro creando automazioni per installazioni creazioni di file da mobileconfig a csv ecc.",
-      "immagine": "resurces/",
+      "immagine": "resurces/src.png",
       "tags": ["Python", "Bash", "automation"],
       "link": "https://github.com/PaoloCamedda/script"
     },
@@ -131,6 +131,13 @@
 
   ],
   "certificazioni": [
+     {
+      "titolo": "Data engeneering sql python",
+      "ente": "Formatemp",
+      "anno": "2026",
+      "immagine": "resurces/logo_formatemp.png",
+      "link": "NONE"
+    },
     {
       "titolo": "Formazione Generale Lavoratori (D.Lgs. 81/08)",
       "ente": "Upo",
@@ -174,11 +181,25 @@
       "link": "resurces/claude_cowork.pdf"
     },
     {
+      "titolo": "Corso DevOps academy",
+      "ente": "Quanta",
+      "anno": "2020",
+      "immagine": "resurces/devops.png",
+      "link": "resurces/devops.pdf"
+    },
+    {
       "titolo": "Corso claude platform academy",
       "ente": "Claude",
       "anno": "2026",
       "immagine": "resurces/logo-claude.png",
       "link": "resurces/claude_platform.pdf"
+    },
+    {
+      "titolo": "Corso Web Designer",
+      "ente": "Abacons",
+      "anno": "2019",
+      "immagine": "resurces/logo_abacons.png",
+      "link": "NONE"
     }
   ],
   "competenze": [

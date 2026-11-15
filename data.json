@@ -61,6 +61,12 @@
       "immagine": "resurces/tesi-preview.png",
       "tags": ["Python", "Java", "Rust", "C", "Javascript", "Benchmarking", "Energy consumption"],
       "link": "https://github.com/PaoloCamedda/Programmazione_Egreen"
+    },{
+      "titolo": "Modular Python ETL/ELT Pipeline",
+      "descrizione": "Motore di Data Ingestion modulare in Python per l'elaborazione scalabile di dataset CSV eterogenei.",
+      "immagine": "resurces/ETL_ELT.png",
+      "tags": ["Python", "Pandas", "SQLite", "SQLAlchemy", "python-dotenv", "Logging", "CLI Interface", "ETL/ELT Architecture", "Modular Design", "Data Ingestion"],
+      "link": "https://github.com/PaoloCamedda/Pipeline_ETL_ELT"
     },
      {
       "titolo": "Holly Desk",

@@ -62,6 +62,13 @@
       "tags": ["Python", "Java", "Rust", "C", "Javascript", "Benchmarking", "Energy consumption"],
       "link": "https://github.com/PaoloCamedda/Programmazione_Egreen"
     },{
+      "titolo": "Multi-format Data Quality Platform",
+      "descrizione": "Piattaforma web interattiva end-to-end in Python e PySpark per il profiling, data quality audit, pulizia e conversione multi-formato di dataset (CSV, JSON, Parquet) con dashboard KPI.",
+      "immagine": "resurces/data_quality.png",
+      "tags": ["Python", "PySpark", "Streamlit", "Plotly", "Pandas", "PyArrow", "Java 17", "Data Quality", "Data Profiling"],
+      "link": "github.com/PaoloCamedda/data-quality-platform"
+    },
+    {
       "titolo": "Modular Python ETL/ELT Pipeline",
       "descrizione": "Motore di Data Ingestion modulare in Python per l'elaborazione scalabile di dataset CSV eterogenei.",
       "immagine": "resurces/ETL_ELT.png",
@@ -236,7 +243,6 @@
   {
     "categoria": "Database, IoT & Sistemi",
     "items": [
-      { "nome": "MySQL & SQL", "dettaglio": "Database Relazionali", "iconClass": "devicon-mysql-plain colored" },
       { "nome": "PostgreSQL & SQL", "dettaglio": "Database Relazionali", "iconClass": "devicon-postgresql-plain colored" },
       { "nome": "MySQL", "dettaglio": "Gestione Dati & Query", "iconClass": "devicon-mysql-plain colored" },
       { "nome": "Firebase & MQTT", "dettaglio": "Cloud & Microservizi IoT", "iconClass": "devicon-firebase-plain colored" },

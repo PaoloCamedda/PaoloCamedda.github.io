@@ -216,30 +216,94 @@
   {
     "categoria": "Backend & Linguaggi",
     "items": [
-      { "nome": "Java", "dettaglio": "Spring Boot 3", "iconClass": "devicon-java-plain colored" },
-      { "nome": "Python", "dettaglio": "Automazione & Scripting", "iconClass": "devicon-python-plain colored" },
-      { "nome": "C / Rust", "dettaglio": "Sistemi & Performance", "iconClass": "devicon-c-plain custom-c" },
-      { "nome": "Node.js", "dettaglio": "REST API", "iconClass": "devicon-nodejs-plain colored" }
+      {
+        "nome": "Java",
+        "dettaglio": "Spring Boot 3",
+        "iconClass": "devicon-java-plain colored"
+      },
+      {
+        "nome": "Python",
+        "dettaglio": "Automazione & Scripting",
+        "iconClass": "devicon-python-plain colored"
+      },
+      {
+        "nome": "C",
+        "dettaglio": "Programmazione di Sistema",
+        "iconClass": "devicon-c-original colored"
+      },
+      {
+        "nome": "Rust",
+        "dettaglio": "Performance & Memory Safety",
+        "iconClass": "devicon-rust-plain colored"
+      },
+      {
+        "nome": "Node.js",
+        "dettaglio": "REST API",
+        "iconClass": "devicon-nodejs-plain colored"
+      }
     ]
   },
   {
     "categoria": "Frontend & Mobile",
     "items": [
-      { "nome": "JavaScript", "dettaglio": "ES6+", "iconClass": "devicon-javascript-plain colored" },
-      { "nome": "React & Vue.js", "dettaglio": "SPA & UI Dinamiche", "iconClass": "devicon-react-original colored" },
-      { "nome": "HTML5 & CSS3", "dettaglio": "Tailwind & Responsive", "iconClass": "devicon-html5-plain colored" },
-      { "nome": "Kotlin", "dettaglio": "Sviluppo Android", "iconClass": "devicon-kotlin-plain colored" }
+      {
+        "nome": "JavaScript",
+        "dettaglio": "ES6+",
+        "iconClass": "devicon-javascript-plain colored"
+      },
+      {
+        "nome": "React & Vue.js",
+        "dettaglio": "SPA & UI Dinamiche",
+        "iconClass": "devicon-react-original colored"
+      },
+      {
+        "nome": "HTML5",
+        "dettaglio": "Markup Semantico",
+        "iconClass": "devicon-html5-plain colored"
+      },
+      {
+        "nome": "CSS3",
+        "dettaglio": "Tailwind & Responsive Design",
+        "iconClass": "devicon-css3-plain colored"
+      },
+      {
+        "nome": "Kotlin",
+        "dettaglio": "Sviluppo Android",
+        "iconClass": "devicon-kotlin-plain colored"
+      }
     ]
   },
   {
-    "categoria": "Database, IoT & Sistemi",
+    "categoria": "Database & Sistemi",
     "items": [
-      { "nome": "MySQL & SQL", "dettaglio": "Database Relazionali", "iconClass": "devicon-mysql-plain colored" },
-      { "nome": "PostgreSQL & SQL", "dettaglio": "Database Relazionali", "iconClass": "devicon-postgresql-plain colored" },
-      { "nome": "Firebase & MQTT", "dettaglio": "Cloud & Microservizi IoT", "iconClass": "devicon-firebase-plain colored" },
-      { "nome": "Linux", "dettaglio": "Amministrazione & Bash", "iconClass": "devicon-linux-plain" },
-      { "nome": "macOS & Git", "dettaglio": "Ambiente Dev & Versioning", "iconClass": "devicon-apple-original" }
+      {
+        "nome": "MySQL",
+        "dettaglio": "Database Relazionali",
+        "iconClass": "devicon-mysql-plain colored"
+      },
+      {
+        "nome": "PostgreSQL",
+        "dettaglio": "Database Relazionali",
+        "iconClass": "devicon-postgresql-plain colored"
+      },
+      {
+        "nome": "Linux",
+        "dettaglio": "Bash & Amministrazione",
+        "iconClass": "devicon-linux-plain"
+      },
+      {
+        "nome": "macOS",
+        "dettaglio": "Ambiente di Sviluppo",
+        "iconClass": "devicon-apple-original"
+      },
+      {
+        "nome": "Git",
+        "dettaglio": "Version Control",
+        "iconClass": "devicon-git-plain colored"
+      }
     ]
+  }
+]
   }
 ]
 }

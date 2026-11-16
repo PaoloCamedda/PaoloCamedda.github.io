@@ -64,7 +64,7 @@
     },{
       "titolo": "Multi-format Data Quality Platform",
       "descrizione": "Piattaforma web interattiva end-to-end in Python e PySpark per il profiling, data quality audit, pulizia e conversione multi-formato di dataset (CSV, JSON, Parquet) con dashboard KPI.",
-      "immagine": "resurces/data_quality.png",
+      "immagine": "resurces/data_ingestion.png",
       "tags": ["Python", "PySpark", "Streamlit", "Plotly", "Pandas", "PyArrow", "Java 17", "Data Quality", "Data Profiling"],
       "link": "github.com/PaoloCamedda/data-quality-platform"
     },
